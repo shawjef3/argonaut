@@ -10,7 +10,7 @@ object build extends Build {
   type Sett = Def.Setting[_]
 
   val base = ScalaSettings.all ++ Seq[Sett](
-      organization := "io.argonaut"
+      organization := "me.jeffshaw.argonaut"
   )
 
   val scalazVersion              = "7.2.2"
@@ -42,7 +42,7 @@ object build extends Build {
     mimaDefaultSettings ++
     Seq(addCompilerPlugin("org.scalamacros" % "paradise" % paradiseVersion cross CrossVersion.full)) ++
     net.virtualvoid.sbt.graph.Plugin.graphSettings ++ Seq[Sett](
-      name := "argonaut"
+      name := "argonaut-scalaz7.2"
     , (sourceGenerators in Compile) <+= (sourceManaged in Compile) map Boilerplate.gen
     , resolvers += Resolver.sonatypeRepo("releases")
     , resolvers += Resolver.sonatypeRepo("snapshots")
